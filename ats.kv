@@ -1,0 +1,599 @@
+
+Interface:
+    orientation: 'vertical'
+    hex_code: "#1E45F3"
+    alpha: 0.2
+    padding:[dp(20),dp(20),dp(20),dp(20)]
+    spacing:dp(20)
+    ScrollView:
+        size_hint:1, 0.9
+        bar_margin: 10
+        bar_width: 10
+                        
+        BoxLayout:
+            orientation: 'vertical'
+            hex_code: "#1E45F3"
+            alpha: 0.2            
+            size_hint: None, None
+            size:self.minimum_size
+            padding:[dp(20),dp(20),dp(20),dp(20)]
+            GridTitle:
+                Label:
+                    col_default_width:dp(300)
+                    #size_hint: 0.8, None
+                    text: "1. CHEQUEO EN LA BASE"
+                Label:
+                    col_default_width:50
+                    size_hint: 0.2, None
+                    text: "Selecciona la correcta"
+            GridLayout:
+                size_hint: None, None
+                size:self.minimum_size
+                hex_code: "#1E45F3"
+                alpha: 0.2
+                cols:2
+                col_default_width:dp(250)
+                row_default_height:dp(30)
+                padding:[dp(50),dp(50),dp(50),dp(50)]
+                Label:
+                    id: label11
+                    text: "Herramientas Necesarias"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label11)  
+                Label:
+                    id: label12
+                    text: "Elementos de Maniobra"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label12)  
+                Label:
+                    id: label13
+                    text: "Puesta a Tierra"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label13)       
+                Label:
+                    id: label14
+                    text: "EPP"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label14) 
+                Label:
+                    id: label15
+                    text: "Vallas, Conos de Señalización"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label15) 
+                Label:
+                    id: label16
+                    text: "Extintor"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label16) 
+                Label:
+                    id: label17
+                    text: "Botiquín Completo"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label17) 
+                Label:
+                    id: label18
+                    text: "Kit de Contención de Derrames"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label18) 
+            GridTitle:
+                Label:
+                    col_default_width:dp(300)
+                    #size_hint: 0.8, None
+                    text: "2. CHEQUEO EN ZONA DE TRABAJO"
+                Label:
+                    col_default_width:50
+                    size_hint: 0.2, None
+                    text: "Selecciona la correcta"
+            GridLayout:
+                size_hint: None, None
+                size:self.minimum_size
+                hex_code: "#1E45F3"
+                alpha: 0.2
+                cols:2
+                col_default_width:dp(300)
+                row_default_height:dp(30)
+                padding:[dp(50),dp(50),dp(50),dp(50)]
+                Label:
+                    id: label21
+                    text: "Estacionamiento correcto de vehículo"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label21)  
+                Label:
+                    id: label22
+                    text: "Vallado-señalización de zona de trabajo"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label22)  
+                Label:
+                    id: label23
+                    text: "Colocación de EPP acorde a la tarea"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label23)
+            GridTitle:
+                Label:
+                    col_default_width:dp(300)
+                    #size_hint: 0.8, None
+                    text: "3. MÉTODO DE TRABAJO"
+                Label:
+                    col_default_width:50
+                    size_hint: 0.2, None
+                    text: "Selecciona la correcta"
+            GridLayout:
+                size_hint: None, None
+                size:self.minimum_size
+                hex_code: "#1E45F3"
+                alpha: 0.2
+                cols:2
+                col_default_width:dp(250)
+                row_default_height:dp(30)
+                padding:[dp(50),dp(50),dp(50),dp(50)]
+                Label:
+                    id: label31
+                    text: "Trabajo Sin Tensión"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label31)  
+                Label:
+                    id: label32
+                    text: "Trabajo Con Tensión"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label32)  
+                Label:
+                    id: label33
+                    text: "Trabajo Con Tensión a Distancia"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label33)       
+                Label:
+                    id: label34
+                    text: "Trabajo Con Tensión a Contacto"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label34) 
+                Label:
+                    id: label35
+                    text: "Trabajo Con Tensión a Potencial"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label35)
+            GridTitle:
+                Label:
+                    col_default_width:dp(300)
+                    #size_hint: 0.8, None
+                    text: "4. TRABAJO CON TENSIÓN"
+                Label:
+                    col_default_width:50
+                    size_hint: 0.2, None
+                    text: "Selecciona la correcta"
+            GridLayout:
+                size_hint: None, None
+                size:self.minimum_size
+                hex_code: "#1E45F3"
+                alpha: 0.2
+                cols:2
+                col_default_width:dp(250)
+                row_default_height:dp(20)
+                padding:[dp(50),dp(50),dp(50),dp(50)]
+                Label:
+                    id: label41
+                    text: "Equipos y coberturas aislantes"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label41)  
+                Label:
+                    id: label42
+                    text: "Condiciones climáticas adecuadas"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label42)  
+                Label:
+                    id: label43
+                    text: "Recierres bloqueados"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label43)       
+                Label:
+                    id: label44
+                    text: "Distancia de seguridad eléctrica"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label44)
+            GridTitle:
+                Label:
+                    col_default_width:dp(300)
+                    #size_hint: 0.8, None
+                    text: "5. TRABAJO SIN TENSIÓN"
+                Label:
+                    col_default_width:50
+                    size_hint: 0.2, None
+                    text: "Selecciona la correcta"
+            GridLayout:
+                size_hint: None, None
+                size:self.minimum_size
+                hex_code: "#1E45F3"
+                alpha: 0.2
+                cols:2
+                col_default_width:dp(300)
+                row_default_height:dp(30)
+                padding:[dp(50),dp(50),dp(50),dp(50)]
+                Label:
+                    id: label51
+                    text: "Corte efectivo de fuente de tensión"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label51)  
+                Label:
+                    id: label52
+                    text: "Comprobación de ausencia de tensión"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label52)  
+                Label:
+                    id: label53
+                    text: "Bloqueo/señalización de equipos"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label53)       
+                Label:
+                    id: label54
+                    text: "Colocación de puesta a tierra"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label54)
+            GridTitle:
+                Label:
+                    col_default_width:dp(300)
+                    #size_hint: 0.8, None
+                    text: "6. IDENTIFICACIÓN DE RIESGOS"
+                Label:
+                    col_default_width:50
+                    size_hint: 0.2, None
+                    text: "Selecciona la correcta"
+            GridLayout:
+                size_hint: None, None
+                size:self.minimum_size
+                hex_code: "#1E45F3"
+                alpha: 0.2
+                cols:2
+                col_default_width:dp(300)
+                row_default_height:dp(30)
+                padding:[dp(50),dp(50),dp(50),dp(50)]
+                Label:
+                    id: label61
+                    text: "Caída a distinto nivel"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label61)  
+                Label:
+                    id: label62
+                    text: "Exposición a ruidos"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label62)  
+                Label:
+                    id: label63
+                    text: "Exposición a gases/polvos/vapores"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label63)       
+                Label:
+                    id: label64
+                    text: "Caída de elementos desde altura"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label64)
+                Label:
+                    id: label65
+                    text: "Contacto eléctrico directo"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label65)  
+                Label:
+                    id: label66
+                    text: "Contacto eléctrico indirecto"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label66)  
+                Label:
+                    id: label67
+                    text: "Quemaduras"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label67)       
+                Label:
+                    id: label68
+                    text: "Carga física"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label68)
+                Label:
+                    id: label69
+                    text: "Carga térmica"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label69)  
+                Label:
+                    id: label610
+                    text: "Incendio"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label610)  
+                Label:
+                    id: label611
+                    text: "Explosión"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label611)       
+                Label:
+                    id: label612
+                    text: "Exposición a agentes químicos"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label612)
+                Label:
+                    id: label613
+                    text: "Atrapamiento"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label613)
+                Label:
+                    id: label614
+                    text: "Ataque de animales"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label614)  
+                Label:
+                    id: label615
+                    text: "Proyección de objetos"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label615)  
+                Label:
+                    id: label616
+                    text: "Arco eléctrico"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label616)       
+                Label:
+                    id: label617
+                    text: "Atropellamiento"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label617)
+                Label:
+                    id: label618
+                    text: "Otros"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label618)
+            GridTitle:
+                Label:
+                    col_default_width:dp(300)
+                    #size_hint: 0.8, None
+                    text: "7. COMUNICACIONES"
+                Label:
+                    col_default_width:50
+                    size_hint: 0.2, None
+                    text: "Selecciona la correcta"
+            GridLayout:
+                size_hint: None, None
+                size:self.minimum_size
+                hex_code: "#1E45F3"
+                alpha: 0.2
+                cols:2
+                col_default_width:dp(400)
+                row_default_height:dp(30)
+                padding:[dp(50),dp(50),dp(50),dp(50)]
+                Label:
+                    id: label71
+                    text: "¿Es una maniobra de servicio?"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label71)  
+                Label:
+                    id: label72
+                    text: "Comunicación al personal sobre tareas a realizar"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label72)  
+                Label:
+                    id: label73
+                    text: "Nº de orden de maniobra / licencia / permiso de trabajo / ordenativo"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                TextInput:
+                    id: licencia
+                    size_hint:1,0.6       
+                Label:
+                    id: label74
+                    text: "Comunicación al personal sobre riesgos existentes"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)                    
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)        
+                    on_active: root.checking(self,label74)
+                Label:
+                    id: label75
+                    text: "Comunicación al personal sobre medidas de control en campo"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)  
+                    on_active: root.checking(self,label75)  
+                Label:
+                    id: label76
+                    text: "Comunicación al personal de acciones ante emergencias"
+                    padding:[dp(20),dp(20),dp(20),dp(20)]
+                    spacing:dp(20)
+                CheckBox:
+                    size_hint: None, None
+                    size: dp(20), dp(20)   
+                    on_active: root.checking(self,label76)
+    BoxLayout:
+        size_hint: 1, 0.1
+        Button:
+            text: "Guardar y enviar!"
+            on_release:root.guardar_y_enviar()
+            
+
+
+<GridTitle>:
+    #hex_code: "#1E45F3"
+    #alpha: 0.2
+    cols:2 
+    row:1
+    col_default_width:dp(250)
+    row_default_height:dp(100)
+    col_force_default:True        
+    row_force_default:True
+    size_hint: None, None
+    #size:self.minimum_size
+    #padding:[dp(20),dp(20),dp(20),dp(20)]
+    
+
+
